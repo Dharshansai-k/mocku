@@ -1,0 +1,44 @@
+{
+  "title": "GATE Mock Test 1",
+  "type": "GATE",
+  "duration": 180,
+  "totalMarks": 100,
+  "questions": [
+    {
+      "question": "What is time complexity of binary search?",
+      "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+      "answer": "O(log n)",
+      "subject": "Computer Science"
+
+    },
+    {
+      "question": "Which data structure uses FIFO?",
+      "options": ["Stack", "Queue", "Tree", "Graph"],
+      "answer": "Queue",
+      "subject": "Computer Science"
+    },
+    {
+      "question": "What does CPU stand for?",
+      "options": [
+        "Central Process Unit",
+        "Central Processing Unit",
+        "Computer Personal Unit",
+        "Control Processing Unit"
+      ],
+      "answer": "Central Processing Unit",
+      "subject": "Computer Science"
+    },
+    {
+      "question": "Which is not a programming language?",
+      "options": ["Python", "Java", "HTML", "C++"],
+      "answer": "HTML",
+      "subject": "Computer Science"
+    },
+    {
+      "question": "Which sorting is fastest on average?",
+      "options": ["Bubble", "Selection", "Quick Sort", "Insertion"],
+      "answer": "Quick Sort",
+      "subject": "Computer Science"
+    }
+  ]
+}

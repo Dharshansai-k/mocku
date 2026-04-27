@@ -1,0 +1,49 @@
+{
+  "title": "RBI Mock Test 1",
+  "type": "RBI",
+  "duration": 120,
+  "totalMarks": 100,
+  "questions": [
+    {
+      "question": "Who is RBI Governor?",
+      "options": ["Ajay Sanyal", "Sanjay Malhotra", " Shaktikanta Das", "Raghuram Rajan "],
+      "answer": "Sanjay Malhotra",
+        "subject": "General Awareness"
+    },
+    {
+      "question": "What is repo rate?",
+      "options": [
+        "Bank lending rate",
+        "Interest by RBI",
+        "Inflation rate",
+        "Tax rate"
+      ],
+      "answer": "Interest by RBI",
+      "subject": "General Awareness"
+    },
+    {
+      "question": "GDP stands for?",
+      "options": [
+        "Gross Domestic Product",
+        "General Domestic Product",
+        "Global Data Product",
+        "Gross Data Price"
+      ],
+      "answer": "Gross Domestic Product",
+      "subject": "General Awareness"
+
+    },
+    {
+      "question": "Which sector controls inflation?",
+      "options": ["RBI", "SEBI", "IRDA", "NITI"],
+      "answer": "RBI",
+      "subject": "General Awareness"
+    },
+    {
+      "question": "Banking falls under?",
+      "options": ["Finance", "Agriculture", "IT", "Defence"],
+      "answer": "Finance",
+      "subject": "General Awareness"
+    }
+  ]
+}

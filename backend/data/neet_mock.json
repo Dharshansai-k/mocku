@@ -1,0 +1,43 @@
+{
+  "title": "NEET Mock Test 1",
+  "type": "NEET",
+  "duration": 180,
+  "totalMarks": 720,
+  "questions": [
+    {
+      "question": "Unit of force?",
+      "options": ["Newton", "Joule", "Pascal", "Watt"],
+      "answer": "Newton",
+        "subject": "Physics"
+    },
+    {
+      "question": "Human heart has how many chambers?",
+      "options": ["2", "3", "4", "5"],
+      "answer": "4",
+      "subject": "Biology"
+    },
+    {
+      "question": "DNA full form?",
+      "options": [
+        "Deoxyribo Nucleic Acid",
+        "Dynamic Acid",
+        "Data Network",
+        "None"
+      ],
+      "answer": "Deoxyribo Nucleic Acid",
+      "subject": "Biology"
+    },
+    {
+      "question": "Photosynthesis occurs in?",
+      "options": ["Chloroplast", "Mitochondria", "Nucleus", "Cell wall"],
+      "answer": "Chloroplast",
+      "subject": "Biology"
+    },
+    {
+      "question": "Blood group universal donor?",
+      "options": ["A", "B", "O-", "AB+"],
+      "answer": "O-",
+      "subject": "Biology"
+    }
+  ]
+}

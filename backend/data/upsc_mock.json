@@ -1,0 +1,38 @@
+{
+  "title": "UPSC Mock Test 1",
+  "type": "UPSC",
+  "duration": 120,
+  "totalMarks": 200,
+  "questions": [
+    {
+      "question": "Indian Constitution adopted in?",
+      "options": ["1947", "1949", "1950", "1952"],
+      "answer": "1949",
+      "subject": "General Studies"
+    },
+    {
+      "question": "Capital of India?",
+      "options": ["Mumbai", "Delhi", "Chennai", "Kolkata"],
+      "answer": "Delhi",            
+        "subject": "General Studies"
+    },
+    {
+      "question": "Who is PM of India?",
+      "options": ["Narendra Modi", "Rahul Gandhi", "Donald Trump", "Manmohan Singh"],
+      "answer": "Narendra Modi",
+      "subject": "General Studies"
+    },
+    {
+      "question": "Fundamental rights count?",
+      "options": ["5", "6", "7", "8"],
+      "answer": "6",
+      "subject": "General Studies"
+    },
+    {
+      "question": "Which body conducts UPSC?",
+      "options": ["Govt", "UPSC", "Parliament", "Court"],
+      "answer": "UPSC",
+      "subject": "General Studies"
+    }
+  ]
+}

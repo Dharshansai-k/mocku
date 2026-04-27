@@ -1,0 +1,74 @@
+{
+  "title": "JEE Mock Test 1",
+  "type": "JEE",
+  "duration": 180,
+  "totalMarks": 300,
+  "questions": [
+    {
+      "question": "What is the derivative of x²?",
+      "options": ["x", "2x", "x²", "2"],
+      "answer": "2x",
+      "subject": "Mathematics"
+
+    },
+    {
+      "question": "Value of sin 90°?",
+      "options": ["0", "1", "-1", "0.5"],
+      "answer": "1",
+      "subject": "Mathematics"
+    },
+    {
+      "question": "Unit of force?",
+      "options": ["Joule", "Newton", "Watt", "Pascal"],
+      "answer": "Newton",
+      "subject": "Physics"
+    },
+    {
+      "question": "Speed = ?",
+      "options": [
+        "Distance × Time",
+        "Distance / Time",
+        "Time / Distance",
+        "Acceleration × Time"
+      ],
+      "answer": "Distance / Time",
+      "subject": "Physics"
+    },
+    {
+      "question": "Solve: 2 + 3 × 4",
+      "options": ["20", "14", "24", "10"],
+      "answer": "14",
+      "subject": "Mathematics"
+    },
+    {
+      "question": "Which is a vector quantity?",
+      "options": ["Speed", "Distance", "Velocity", "Mass"],
+      "answer": "Velocity",
+      "subject": "Physics"
+    },
+    {
+      "question": "Chemical symbol of Sodium?",
+      "options": ["So", "Na", "S", "Sn"],
+      "answer": "Na",
+      "subject": "Chemistry"
+    },
+    {
+      "question": "Value of g (gravity)?",
+      "options": ["9.8 m/s²", "10 m/s²", "8 m/s²", "9 m/s"],
+      "answer": "9.8 m/s²",
+      "subject": "Physics"
+    },
+    {
+      "question": "What is log₁₀(100)?",
+      "options": ["1", "2", "10", "100"],
+      "answer": "2",
+      "subject": "Mathematics"
+    },
+    {
+      "question": "Which gas is used in photosynthesis?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "answer": "Carbon Dioxide",
+      "subject": "Biology"
+    }
+  ]
+}

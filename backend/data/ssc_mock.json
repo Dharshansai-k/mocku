@@ -1,0 +1,69 @@
+{
+  "title": "SSC Mock Test 1",
+  "type": "SSC",
+  "duration": 60,
+  "totalMarks": 100,
+  "questions": [
+    {
+      "question": "What is 15 × 6?",
+      "options": ["90", "80", "100", "85"],
+      "answer": "90",
+      "subject": "Quant"
+    },
+    {
+      "question": "Find the synonym of 'Rapid'",
+      "options": ["Slow", "Fast", "Weak", "Late"],
+      "answer": "Fast",
+      "subject": "Reasoning"
+
+    },
+    {
+      "question": "Who is the President of India?",
+      "options": ["Manmohan Singh", "Draupadi Murmu", "Ramnath Kovind", "Pranab Mukherjee"],
+      "answer": "Draupadi Murmu",
+      "subject": "GA"
+    },
+    {
+      "question": "Which number is divisible by 9?",
+      "options": ["81", "82", "83", "84"],
+      "answer": "81",
+      "subject": "Quant"
+    },
+    {
+      "question": "If A = 1, B = 2, then CAT = ?",
+      "options": ["24", "26", "25", "27"],
+      "answer": "24",
+      "subject": "Reasoning"
+    },
+    {
+      "question": "What is 25% of 200?",
+      "options": ["25", "50", "75", "100"],
+      "answer": "50",
+      "subject": "Quant"
+    },
+    {
+      "question": "Choose correct spelling:",
+      "options": ["Recieve", "Receive", "Receeve", "Receve"],
+      "answer": "Receive",
+      "subject": "English"
+    },
+    {
+      "question": "What comes next? 2, 4, 8, 16, ?",
+      "options": ["20", "24", "32", "30"],
+      "answer": "32",
+      "subject": "Quant"
+    },
+    {
+      "question": "Which is a prime number?",
+      "options": ["4", "6", "9", "7"],
+      "answer": "7",
+    "subject": "Quant"
+    },
+    {
+      "question": "Opposite of 'Increase'",
+      "options": ["Grow", "Reduce", "Expand", "Rise"],
+      "answer": "Reduce",
+      "subject": "Reasoning"
+    }
+  ]
+}
