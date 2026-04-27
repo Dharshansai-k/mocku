@@ -15,7 +15,25 @@ AI-based mock test platform for competitive exams like JEE, SSC, GATE, etc.
 - MongoDB
 
 ## 📸 Screenshots
-(Add screenshots here)
+
+### 📊 Login Page
+![Result](screenshots/login.png)
+
+### 🏠 Home Page
+![Home](screenshots/home.png)
+
+### 🧪 Test Interface
+![Test](screenshots/exams.png)
+
+### 📊 Profile Page
+![Result](screenshots/profile.png)
+
+### 📊 Result Page
+![Result](screenshots/results.png)
+
+
+### 📈 Dashboard
+![Dashboard](screenshots/dashboard.png)
 
 ## 🚀 Run Locally
 
