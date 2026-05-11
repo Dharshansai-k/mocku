@@ -43,7 +43,7 @@ function TestPage() {
           examQuestions = exam.questions || [];
           setTime((exam.duration || 5) );
         } else {
-          const res = await fetch("http://localhost:5000/api/exams");
+          const res = await fetch("https://mocku-backend-1v48.onrender.com/api/exams");
           const data = await res.json();
           examQuestions = data[0]?.questions || [];
         }
@@ -125,7 +125,7 @@ Do you want to submit?
 
       const user = JSON.parse(localStorage.getItem("user"));
 
-      await fetch("http://localhost:5000/api/results", {
+      await fetch("https://mocku-backend-1v48.onrender.com/api/results", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

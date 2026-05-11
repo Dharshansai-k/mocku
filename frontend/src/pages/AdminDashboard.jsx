@@ -21,13 +21,13 @@ function AdminDashboard() {
         const token = localStorage.getItem("token");
 
         const usersRes = await fetch(
-          "http://localhost:5000/api/auth/all",
+          "https://mocku-backend-1v48.onrender.com/api/auth/all",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const users = await usersRes.json();
 
         const resultsRes = await fetch(
-          "http://localhost:5000/api/results/all",
+          "https://mocku-backend-1v48.onrender.com/api/results/all",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const resultsData = await resultsRes.json();

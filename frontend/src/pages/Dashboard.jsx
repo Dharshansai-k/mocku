@@ -31,7 +31,7 @@ function Dashboard() {
         if (!user) return;
 
         const res = await fetch(
-          `http://localhost:5000/api/results/user/${user._id}`
+          `https://mocku-backend-1v48.onrender.com/api/results/user/${user._id}`
         );
 
         const data = await res.json();

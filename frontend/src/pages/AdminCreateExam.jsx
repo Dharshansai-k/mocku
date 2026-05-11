@@ -19,7 +19,7 @@ function AdminCreateExam() {
         return alert("Questions must be array");
       }
 
-      const res = await fetch("http://localhost:5000/api/exams", {
+      const res = await fetch("https://mocku-backend-1v48.onrender.com/api/exams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

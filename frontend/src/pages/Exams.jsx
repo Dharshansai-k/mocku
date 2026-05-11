@@ -15,7 +15,7 @@ function Exams() {
   const categories = ["JEE", "GATE", "NEET", "RBI", "UPSC", "SSC"];
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/exams?type=${type}`)
+    fetch(`https://mocku-backend-1v48.onrender.com/api/exams?type=${type}`)
       .then((res) => res.json())
       .then(setExams);
   }, [type]);

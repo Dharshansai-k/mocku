@@ -31,7 +31,7 @@ function Profile() {
 
         // 📊 Fetch results
         const res = await fetch(
-          `http://localhost:5000/api/results/user/${storedUser._id}`,
+          `https://mocku-backend-1v48.onrender.com/api/results/user/${storedUser._id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // ✅ FIXED
@@ -144,7 +144,7 @@ function Profile() {
                 const token = localStorage.getItem("token");
 
                 const res = await fetch(
-                  "http://localhost:5000/api/auth/update",
+                  "https://mocku-backend-1v48.onrender.com/api/auth/update",
                   {
                     method: "PUT",
                     headers: {
