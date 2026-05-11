@@ -1,196 +1,118 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-import { useNavigate } from "react-router-dom";
 
 function AdminCreateExam() {
-  const navigate = useNavigate();
+  const [title, setTitle] = useState("");
+  const [type, setType] = useState("");
+  const [duration, setDuration] = useState(60);
+  const [jsonInput, setJsonInput] = useState("");
+
   const token = localStorage.getItem("token");
 
-  const [exam, setExam] = useState({
-    title: "",
-    type: "JEE",
-    duration: 180,
-    totalMarks: 300,
-    questions: [],
-  });
+  const createExam = async () => {
+    try {
+      // ✅ Parse JSON
+      const questions = JSON.parse(jsonInput);
 
-  const [q, setQ] = useState({
-    question: "",
-    options: ["", "", "", ""],
-    answer: "",
-    subject: "General",
-    difficulty: "easy",
-  });
+      // ✅ Validation
+      if (!Array.isArray(questions)) {
+        return alert("Questions must be array");
+      }
 
-  // ➕ Add one question to the list
-  const addQuestion = () => {
-    if (!q.question || q.options.some((o) => !o) || !q.answer) {
-      alert("Fill question, all options, and answer");
-      return;
+      const res = await fetch("http://localhost:5000/api/exams", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          title,
+          type,
+          duration,
+          totalMarks: questions.length,
+          questions,
+        }),
+      });
+
+      const data = await res.json();
+
+      console.log(data);
+
+      if (res.ok) {
+        alert("✅ Exam Created");
+
+        setTitle("");
+        setType("");
+        setDuration(60);
+        setJsonInput("");
+      } else {
+        alert(data.msg || "Error creating exam");
+      }
+
+    } catch (err) {
+      console.log(err);
+      alert("❌ Invalid JSON format");
     }
-
-    setExam((prev) => ({
-      ...prev,
-      questions: [...prev.questions, q],
-    }));
-
-    // reset form
-    setQ({
-      question: "",
-      options: ["", "", "", ""],
-      answer: "",
-      subject: "General",
-      difficulty: "easy",
-    });
   };
-
-  // 🚀 Submit exam to backend
-  const submitExam = async () => {
-  try {
-    const token = localStorage.getItem("token");
-
-    const res = await fetch("http://localhost:5000/api/exams", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(exam),
-    });
-
-    const data = await res.json();
-
-    console.log("Response:", data); // 🔥 DEBUG
-
-    if (!res.ok) {
-      alert(data.message || "Error creating exam");
-      return;
-    }
-
-    alert("Exam created successfully ✅");
-  } catch (err) {
-    console.log(err);
-    alert("Server error ❌");
-  }
-};
 
   return (
     <Layout>
-      <div className="p-6">
+      <div className="p-6 max-w-4xl mx-auto">
 
-        <h1 className="text-2xl font-bold mb-6">
-          Create Exam 🧠
+        <h1 className="text-3xl font-bold mb-6">
+          🛠 Create Exam
         </h1>
 
-        {/* 📝 Exam Info */}
-        <div className="bg-white p-4 rounded-xl shadow mb-6">
+        {/* BASIC INFO */}
+        <div className="bg-white p-6 rounded-xl shadow mb-6">
+
           <input
+            type="text"
             placeholder="Exam Title"
-            value={exam.title}
-            onChange={(e) =>
-              setExam({ ...exam, title: e.target.value })
-            }
-            className="border p-2 w-full mb-2"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="border p-3 w-full rounded mb-4"
           />
 
-          <select
-            value={exam.type}
-            onChange={(e) =>
-              setExam({ ...exam, type: e.target.value })
-            }
-            className="border p-2 w-full mb-2"
-          >
-            <option>JEE</option>
-            <option>GATE</option>
-            <option>RBI</option>
-            <option>SSC</option>
-          </select>
-
           <input
-            type="number"
-            placeholder="Duration (minutes)"
-            value={exam.duration}
-            onChange={(e) =>
-              setExam({ ...exam, duration: Number(e.target.value) })
-            }
-            className="border p-2 w-full mb-2"
+            type="text"
+            placeholder="Exam Type (JEE/SSC/GATE)"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            className="border p-3 w-full rounded mb-4"
           />
 
           <input
             type="number"
-            placeholder="Total Marks"
-            value={exam.totalMarks}
-            onChange={(e) =>
-              setExam({ ...exam, totalMarks: Number(e.target.value) })
-            }
-            className="border p-2 w-full"
+            placeholder="Duration"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            className="border p-3 w-full rounded"
           />
         </div>
 
-        {/* ❓ Question Builder */}
-        <div className="bg-white p-4 rounded-xl shadow mb-6">
-          <h3 className="font-bold mb-3">Add Question</h3>
+        {/* JSON INPUT */}
+        <div className="bg-white p-6 rounded-xl shadow">
 
-          <input
-            placeholder="Question"
-            value={q.question}
-            onChange={(e) =>
-              setQ({ ...q, question: e.target.value })
-            }
-            className="border p-2 w-full mb-2"
-          />
+          <h3 className="font-bold mb-3">
+            📄 Paste Questions JSON
+          </h3>
 
-          {q.options.map((opt, i) => (
-            <input
-              key={i}
-              placeholder={`Option ${i + 1}`}
-              value={opt}
-              onChange={(e) => {
-                const updated = [...q.options];
-                updated[i] = e.target.value;
-                setQ({ ...q, options: updated });
-              }}
-              className="border p-2 w-full mb-2"
-            />
-          ))}
-
-          <input
-            placeholder="Correct Answer"
-            value={q.answer}
-            onChange={(e) =>
-              setQ({ ...q, answer: e.target.value })
-            }
-            className="border p-2 w-full mb-2"
+          <textarea
+            rows={18}
+            value={jsonInput}
+            onChange={(e) => setJsonInput(e.target.value)}
+            placeholder='Paste JSON here...'
+            className="border p-3 w-full rounded font-mono text-sm"
           />
 
           <button
-            onClick={addQuestion}
-            className="bg-green-600 text-white px-4 py-2 rounded"
+            onClick={createExam}
+            className="bg-blue-600 text-white px-6 py-3 rounded mt-4"
           >
-            Add Question
+            🚀 Create Exam
           </button>
         </div>
-
-        {/* 📋 Preview */}
-        <div className="bg-white p-4 rounded-xl shadow mb-6">
-          <h3 className="font-bold mb-3">
-            Questions Added: {exam.questions.length}
-          </h3>
-
-          {exam.questions.map((q, i) => (
-            <p key={i} className="text-sm border-b py-1">
-              {i + 1}. {q.question}
-            </p>
-          ))}
-        </div>
-
-        {/* 🚀 Submit */}
-        <button
-          onClick={submitExam}
-          className="w-full bg-blue-600 text-white py-3 rounded"
-        >
-          Create Exam
-        </button>
 
       </div>
     </Layout>
